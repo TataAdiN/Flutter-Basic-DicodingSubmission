@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:monumen_submission/models/generator_monuments.dart';
+import 'package:monumen_submission/models/monument.dart';
+import 'package:monumen_submission/pages/profile/profile_page.dart';
 
 import 'home_page.dart';
 
@@ -11,32 +14,35 @@ class HomePageState extends State<HomePage> {
     });
   }
 
+  void _openProfilePage() {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return const ProfilePage();
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Monument> monuments = GeneratorMonuments.monuments();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0),
+              child: InkWell(
+                  onTap: () => _openProfilePage(),
+                  child: const Icon(Icons.account_circle_outlined, size: 32)),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: ListView.builder(
+            itemCount: monuments.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Card(
+                child: Text(monuments[index].name),
+              );
+            }) // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
