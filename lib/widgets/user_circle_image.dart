@@ -15,8 +15,9 @@ class UserCircleImage extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(width: 2, color: Colors.grey),
           shape: BoxShape.circle,
-          image:
-              DecorationImage(fit: BoxFit.cover, image: NetworkImage(imgUrl))),
+          image: const DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/profil.jpg'))),
     );
   }
 }
