@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:monumen_submission/models/generator_monuments.dart';
 import 'package:monumen_submission/models/monument.dart';
+import 'package:monumen_submission/pages/monumen/monumen_page.dart';
 import 'package:monumen_submission/pages/profile/profile_page.dart';
+import 'package:monumen_submission/widgets/monument_card.dart';
 
 import 'home_page.dart';
 
 class HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _openDetail(Monument monument) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return MonumentPage(monument: monument);
+    }));
   }
 
   void _openProfilePage() {
@@ -36,13 +36,17 @@ class HomePageState extends State<HomePage> {
             )
           ],
         ),
-        body: ListView.builder(
-            itemCount: monuments.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                child: Text(monuments[index].name),
-              );
-            }) // This trailing comma makes auto-formatting nicer for build methods.
+        body: Container(
+          color: Colors.grey[300],
+          padding: const EdgeInsets.only(top: 5.0),
+          child: ListView.builder(
+              itemCount: monuments.length,
+              itemBuilder: (BuildContext context, int index) {
+                return InkWell(
+                    onTap: () => _openDetail(monuments[index]),
+                    child: MonumentCard(monument: monuments[index]));
+              }),
+        ) // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
 }
