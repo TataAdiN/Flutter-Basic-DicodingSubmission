@@ -15,7 +15,7 @@ class GeneratorMonuments {
         pinMap: 'https://goo.gl/maps/hocTP538x4SzgYaQ8',
         description:
             "Persandian di Indonesia dimulai dari Jawatan Teknik Kementerian Pertahanan Indonesia pada masa perjuangan kemerdekaan, baik di Jakarta maupun di Yogyakarta. Menteri Pertahanan kala itu, Amir Syariffudin, mengungkapkan pentingnya organisasi pelaksana fungsi persandian. Amir Syariffudin bersama dr Rubiono Kertapati, yang kini dikenal sebagai Bapak Persandian Indonesia, membentuk lembaga sandi negara pertama yang disebut Dinas Kode pada 4 April 1946. Perndirian Dinas Kode tersebut diperingati sebagai Hari Persandian Indonesia.\n\nLembaga persandian Indonesia telah mengalami 4 kali perubahan. Pada tahun 1950-1960, Dinas Sandi diubah menjadi Jawatan Sandi. Kemudian pada masa Orde Baru Jawatan Sandi diubah menjadi Lembaga Sandi Negara dan berada di bawah koordinasi Presiden. Pada masa kepemmpinan Presiden Joko Widodo, Lembaga Sandi Negara ini dilebur dengan Badan Siber dan Sandi Negara (BSSN).\n\nMonumen Sanapati dibangun untuk memeringati 50 tahun persandian Indonesia di Yogyakarta. Persandian di Yogyakarta memiliki andil yang besar dalam mempertahankan kemerdekaan Negara Indonesia. Tercatat pada peristiwa Serangan Umum 1 Maret 1949, sandi buatan Roebiono masih digunakan untuk menyebarkan pesan pada dunia bahwa Indonesia masih ada dan masih bisa melawan. Selanjutnya, peristiwa tersebut dikenal dengan Peristiwa 6 jam di Yogyakarta.",
-        images: m1Images);
+        images: m1Images, rating: 1);
     monuments.add(m1);
     List<String> m2Images = [];
     m2Images.add('bibis1.jpg');
@@ -44,7 +44,7 @@ class GeneratorMonuments {
         pinMap: 'https://goo.gl/maps/79iiELi8K6hasE3r6',
         description:
             "Prasasti Mrisi Tahun 1949 Saat Agresi Militer Belanda. Monumen ini menandai\nperjuangan rakyat Mrisi dan sekitarnya gagah berani rela berkorban untuk\nmenyerahkan harta dan jiwanya dalam melawan Belanda yang akan kembali\nnmenjajah. Para Pahlawan yang gugur :\n1. Saridjo\n2. Paidjan\n3. Imoredjo\n4. Tugijo\n5. Djodikromo\n6. Sudinomo\n7. Gimin\n8. Irodimedjo\n9. Setrodikromo\n10. Tupek\n11. Randim\n12. Martosentono\n13. Harjowagiyo\nnPedukuhan Mrisi saat itu juga membuat dapur umum untuk memasok kebutuhan pangan para prajurit yang sedang bertempur di medan pertempuran. Kiriman nasi (nuk)  sangat  bermanfaat bagi  prajurit  TNI  karena  terbebas  dari  ancaman kelaparan\n",
-        images: m3Images);
+        images: m3Images, rating: 5);
     monuments.add(m3);
     List<String> m4Images = [];
     m4Images.add('apsari1.jpg');
