@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:monumen_submission/models/monument.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MonumentCard extends StatelessWidget {
-  const MonumentCard({super.key, required this.monument});
+  const MonumentCard({super.key, required this.monument, required this.onRatingChanged});
 
   final Monument monument;
+  final Function(double rating) onRatingChanged;
 
   void _openMaps(String pinMap) {
     canLaunchUrl(Uri.parse(pinMap))
@@ -60,6 +62,23 @@ class MonumentCard extends StatelessWidget {
                             ),
                           ],
                         ),
+                      ),
+                      Center(
+                        child: RatingBar.builder(
+                          initialRating: monument.rating,
+                          minRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: false,
+                          itemCount: 5,
+                          itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
+                            onRatingChanged(rating);
+                          },
+                        )
                       )
                     ]))));
   }
