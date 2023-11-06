@@ -1,5 +1,6 @@
 class Monument {
   String name, summary, map, pinMap, description;
+  double rating;
   List<String> images;
 
   Monument(
@@ -8,5 +9,7 @@ class Monument {
       required this.map,
       required this.pinMap,
       required this.description,
-      required this.images});
+      required this.images,
+        this.rating = 0
+      });
 }
